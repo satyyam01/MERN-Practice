@@ -1,0 +1,15 @@
+<%- include('../partials/head') %>
+</head>
+
+<body>
+  <%- include('../partials/nav') %>
+  <main class="container mx-auto mt-8 p-4">
+    <div class="bg-white shadow-md rounded-lg p-6 text-center">
+      <h1 class="text-3xl font-bold text-red-500 mb-4"><%= home.homeName %></h1>
+      <img src="<%= home.homeImage %>" alt="<%= home.homeName %>" class="mx-auto mb-4 rounded-lg max-w-[300px] h-auto" />
+      <p class="text-xl font-semibold mb-2">Price: <%= home.homePrice %></p>
+      <p class="text-lg text-gray-700">Location: <%= home.homeLocation %></p>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<header class="bg-red-500 text-white p-4 shadow-md">
+  <nav class="container mx-auto flex items-center justify-between relative">
+    <!-- Left nav links -->
+    <ul class="flex space-x-4">
+      <li>
+        <a
+          href="/"
+          class="py-2 px-4 rounded transition duration-300 hover:bg-red-400 <%= currentPage === 'home' ? 'bg-red-400' : '' %>"
+        >
+          Home</a
+        >
+      </li>
+      <li>
+        <a
+          href="/host/add-home"
+          class="py-2 px-4 rounded transition duration-300 hover:bg-red-400 <%= currentPage === 'add-home' ? 'bg-red-400' : '' %>"
+          >Add Home</a
+        >
+      </li>
+    </ul>
+
+    <!-- Center Logo -->
+    <div
+      class="absolute left-1/2 transform -translate-x-1/2 color-white text-3xl font-bold <%= currentPage === '404' ? 'bg-red-400' : '' %>"
+    >
+      <a href="/">
+        <h1>AirBnB</h1>
+      </a>
+    </div>
+
+    <!-- Right empty div for layout balance (optional) -->
+    <div class="w-28"></div>
+  </nav>
+</header>

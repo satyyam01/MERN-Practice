@@ -1,0 +1,26 @@
+[
+  {
+    "homeName": "Utsav",
+    "homePrice": "2299",
+    "homeLocation": "Gurugram",
+    "homeImage": "https://a0.muscache.com/im/pictures/hosting/Hosting-1371117722628584119/original/db1e223b-66a9-4116-a312-18afd000749b.jpeg?im_w=1440"
+  },
+  {
+    "homeName": "Balance",
+    "homePrice": "2499",
+    "homeLocation": "Civil Lines, Jaipur",
+    "homeImage": "https://a0.muscache.com/im/pictures/miso/Hosting-851858297334829776/original/044b429a-5bbe-4b7c-b174-a4caa5cd172a.jpeg?im_w=1200"
+  },
+  {
+    "homeName": "BruhVille",
+    "homePrice": "2499",
+    "homeLocation": "Civil Lines, Jaipur",
+    "homeImage": "https://a0.muscache.com/im/pictures/hosting/Hosting-1371117722628584119/original/db1e223b-66a9-4116-a312-18afd000749b.jpeg?im_w=1440"
+  },
+  {
+    "homeName": "Wabi Sabi",
+    "homePrice": "3499",
+    "homeLocation": "Civil Lines, Jaipur",
+    "homeImage": "https://a0.muscache.com/im/pictures/miso/Hosting-619981459458327472/original/10e7475b-bf19-4c2e-9a78-d7459f84b5fd.jpeg?im_w=1200"
+  }
+]

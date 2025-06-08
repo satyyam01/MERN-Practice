@@ -1,0 +1,37 @@
+<%- include('../partials/head') %>
+  </head>
+  <body>
+    <%- include('../partials/nav') %>
+    <main class="container mx-auto bg-white shadow-lg rounded-lg p-8 mt-10 max-w-4xl">
+      <h2 class="text-3xl text-red-500 font-bold text-center mb-10">
+        Here are our registered homes:
+      </h2>
+
+      <% if (registeredHomes.length === 0) { %>
+        <p class="text-center text-gray-500">No homes registered yet.</p>
+      <% } else { %>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <% registeredHomes.forEach(home => { %>
+            <div class="bg-gray-100 p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300 relative">
+              <% if (home.homeImage) { %>
+                <img src="<%= home.homeImage %>" alt="Home Image" class="w-full h-48 object-cover rounded mb-4">
+              <% } %>
+              <button class="absolute top-2 right-2 bg-red-500 text-white rounded-full p-2 hover:bg-red-600 transition duration-300" aria-label="Add to favorites">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+                </svg>
+              </button>
+              <h3 class="text-xl font-semibold  mb-1 text-gray-800"><%= home.homeName %></h3>
+              <p class="text-gray-700 mb-1"><span class="font-medium">Location:</span> <%= home.homeLocation %></p>
+              <p class="text-gray-700"><span class="font-medium">Price per Night:</span> ₹<%= home.homePrice %></p>
+              <div class="mt-4 flex space-x-2">
+                <a href="/store/reserve" class="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 transition duration-300">Reserve</a>
+                <a href="/store/homeDetail" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-300">Details</a>
+              </div>
+            </div>
+          <% }) %>
+        </div>
+      <% } %>
+    </main>
+  </body>
+</html>
