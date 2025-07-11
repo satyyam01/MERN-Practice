@@ -4,7 +4,7 @@ const Home = require("../models/home");
 
 // 1. add home
 exports.addHomeGet = (req, res, next) => {
-  res.render("host/addHome", {
+  res.render("host/editHome", {
     pageTitle: "Add Home",
     currentPage: "add-home",
   }); // render the addHome.ejs file with the page title
@@ -18,7 +18,9 @@ exports.addHomePost = (req, res, next) => {
     req.body.homeName,
     req.body.homePrice,
     req.body.homeLocation,
-    req.body.homeImage
+    req.body.homeImage,
+    req.body.homeDesc,
+    req.body.homeRating
   );
 
   home.save();

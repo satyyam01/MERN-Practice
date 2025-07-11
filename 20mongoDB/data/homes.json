@@ -1,0 +1,29 @@
+[
+  {
+    "homeName": "Balance",
+    "homePrice": "2499",
+    "homeLocation": "Civil Lines, Jaipur",
+    "homeImage": "https://a0.muscache.com/im/pictures/miso/Hosting-851858297334829776/original/044b429a-5bbe-4b7c-b174-a4caa5cd172a.jpeg?im_w=1200",
+    "homeDesc": "A cozy retreat with modern interiors.",
+    "homeRating": "4.3",
+    "id": "0.9582738938886726"
+  },
+  {
+    "homeName": "Wabi Sabi",
+    "homePrice": "3499",
+    "homeLocation": "Civil Lines, Jaipur",
+    "homeImage": "/images/house1.png",
+    "homeDesc": "Very Nice",
+    "homeRating": "4.8",
+    "id": "0.17614393640905834"
+  },
+  {
+    "homeName": "BruhVille",
+    "homePrice": "5000",
+    "homeLocation": "Gurugram",
+    "homeImage": "/images/house4.png",
+    "homeDesc": "Minimalist design with a serene ambiance.",
+    "homeRating": "4.7",
+    "id": "0.9148592606224868"
+  }
+]

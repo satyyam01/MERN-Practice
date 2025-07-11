@@ -1,0 +1,91 @@
+<header class="bg-red-500 text-white p-4 shadow-md">
+  <nav class="container mx-auto flex items-center justify-between relative">
+    <!-- Hamburger menu button -->
+    <button id="menu-btn" class="block focus:outline-none">
+      <svg
+        class="w-8 h-8 text-white"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+    <!-- Dropdown menu -->
+    <ul
+      id="menu"
+      class="hidden absolute top-full left-0 w-48 bg-red-500 text-white shadow-md rounded-md mt-2 py-2 z-50"
+    >
+      <li>
+        <a
+          href="/"
+          class="block px-4 py-2 rounded transition duration-300 hover:bg-red-400 <%= currentPage === 'home' ? 'bg-red-400' : '' %>"
+          >Home</a
+        >
+      </li>
+
+      <!-- Store pages -->
+      <li>
+        <a
+          href="/store/homeList"
+          class="block px-4 py-2 rounded transition duration-300 hover:bg-red-400 <%= currentPage === 'store-home-list' ? 'bg-red-400' : '' %>"
+          >Home List</a
+        >
+      </li>
+      <li>
+        <a
+          href="/store/favList"
+          class="block px-4 py-2 rounded transition duration-300 hover:bg-red-400 <%= currentPage === 'store-fav-list' ? 'bg-red-400' : '' %>"
+          >Favorites</a
+        >
+      </li>
+      <li>
+        <a
+          href="/store/bookings"
+          class="block px-4 py-2 rounded transition duration-300 hover:bg-red-400 <%= currentPage === 'store-bookings' ? 'bg-red-400' : '' %>"
+          >Bookings</a
+        >
+      </li>
+      <!-- Host pages -->
+      <li>
+        <a
+          href="/host/addHome"
+          class="block px-4 py-2 rounded transition duration-300 hover:bg-red-400 <%= currentPage === 'host-add-home' ? 'bg-red-400' : '' %>"
+          >Add Home</a
+        >
+      </li>
+      <li>
+        <a
+          href="/host/adminHomeList"
+          class="block px-4 py-2 rounded transition duration-300 hover:bg-red-400 <%= currentPage === 'host-admin-home-list' ? 'bg-red-400' : '' %>"
+          >Admin Home List</a
+        >
+      </li>
+    </ul>
+
+    <!-- Center Logo -->
+    <div
+      class="absolute left-1/2 transform -translate-x-1/2 color-white text-3xl font-bold <%= currentPage === '404' ? 'bg-red-400' : '' %>"
+    >
+      <a href="/">
+        <h1>AirBnB</h1>
+      </a>
+    </div>
+
+    <!-- Right empty div for layout balance (optional) -->
+    <div class="w-28"></div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+
+        btn.addEventListener('click', () => {
+          menu.classList.toggle('hidden');
+        });
+      });
+    </script>
+  </nav>
+</header>

@@ -1,3 +1,4 @@
+const Favourite = require("../models/favourite");
 const Home = require("../models/home");
 
 // 1. home page
@@ -23,7 +24,7 @@ exports.homeListGet = (req, res, next) => {
   });
 };
 
-// 3. home detail
+// 3. home detail (get)
 exports.homeDetailGet = (req, res, next) => {
   const homeId = req.params.homeId;
   Home.findById(homeId, (home) => {
@@ -41,20 +42,42 @@ exports.homeDetailGet = (req, res, next) => {
   });
 };
 
-// 4. fav list
+// 4. fav list (get)
 exports.favListGet = (req, res, next) => {
-  res.render("store/favList", {
-    pageTitle: "Fav List",
-    currentPage: "fav list",
+  Favourite.getFavourites((favourites) => {
+    Home.fetchAll((registeredHomes) => {
+
+      // const favouriteHomes = registeredHomes.filter(home =>favourites. includes (home. id));
+
+      const favWithDetails = favourites.map((homeId) =>
+        registeredHomes.find((home) => home.id === homeId)
+      );
+        res.render("store/favList", {
+          //favouriteHomes: favouriteHomes,
+          favourites: favWithDetails,
+          pageTitle: "Fav List",
+          currentPage: "fav list",
+      });
+    });
   });
 };
 
-// 5. reserve
+// 5. fav list (post)
+exports.favListPost = (req, res, next) => {
+  Favourite.addFavourite(req.body.id, (error) => {
+    if (error) {
+      console.log("Error while marking favourites:", error);
+    }
+    res.redirect("/store/favList");
+  });
+};
+
+// 6. reserve
 exports.reserveGet = (req, res, next) => {
   res.render("store/reserve", { pageTitle: "reserve", currentPage: "reserve" });
 };
 
-// 6. bookings
+// 7. bookings
 exports.bookingsGet = (req, res, next) => {
   res.render("store/bookings", {
     pageTitle: "bookings",

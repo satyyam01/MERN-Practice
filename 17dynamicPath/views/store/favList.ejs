@@ -1,9 +1,45 @@
 <%- include('../partials/head') %>
 </head>
-
 <body>
   <%- include('../partials/nav') %>
-  <main class="container mx-auto mt-8 p-4">
-    <div class="bg-white shadow-md rounded-lg p-6 text-center">
-      <h1 class="text-3xl font-bold text-red-500 mb-4">Favourite List</h1>
+
+  <main class="container mx-auto bg-white shadow-lg rounded-lg p-8 mt-10 max-w-4xl">
+    <h2 class="text-3xl text-red-500 font-bold text-center mb-10">
+      Your Favourite Homes
+    </h2>
+
+    <% if (favourites.length === 0) { %>
+      <p class="text-center text-gray-500">You haven’t added any homes to your favourites yet.</p>
+    <% } else { %>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <% favourites.forEach(home => { %>
+          <% if (home) { %>
+            <div class="bg-gray-100 p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300 relative">
+              <% if (home.homeImage) { %>
+                <img src="<%= home.homeImage %>" alt="Home Image" class="w-full max-h-48 object-contain rounded mb-4">
+              <% } %>
+
+              <!-- Optional: remove from favourites button -->
+              <!-- <form action="/favourites/remove" method="post" class="absolute top-2 right-2">
+                <input type="hidden" name="id" value="<%= home.id %>" />
+                <button class="bg-red-500 text-white rounded-full p-2 hover:bg-red-600 transition duration-300" aria-label="Remove from favorites">
+                  ❤️
+                </button>
+              </form> -->
+
+              <h3 class="text-xl font-semibold mb-1 text-gray-800"><%= home.homeName %></h3>
+              <p class="text-gray-700 mb-1"><span class="font-medium">Location:</span> <%= home.homeLocation %></p>
+              <p class="text-gray-700 mb-1"><span class="font-medium">Price per Night:</span> ₹<%= home.homePrice %></p>
+              <p class="text-gray-700"><span class="font-medium">Rating:</span> <%= home.homeRating %></p>
+              <div class="mt-4 flex space-x-2">
+                <a href="/store/reserve" class="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 transition duration-300">Reserve</a>
+                <a href="/store/homeDetail/<%= home.id %>" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-300">Details</a>
+              </div>
+            </div>
+          <% } %>
+        <% }) %>
+      </div>
+    <% } %>
+  </main>
 </body>
+</html>

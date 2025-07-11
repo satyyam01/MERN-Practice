@@ -6,11 +6,13 @@ const homesFilePath = path.join(rootDir, 'data', 'homes.json');
 
 
 module.exports = class Home {
-  constructor(homeName, homePrice, homeLocation, homeImage) {
+  constructor(homeName, homePrice, homeLocation, homeImage, homeDesc, homeRating) {
     this.homeName = homeName;
     this.homePrice = homePrice;
     this.homeLocation = homeLocation;
     this.homeImage = homeImage;
+    this.homeDesc = homeDesc;
+    this.homeRating = homeRating;
   }
 
   save() {

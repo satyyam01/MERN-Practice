@@ -15,6 +15,8 @@ userRouter.get("/homeDetail/:homeId", userController.homeDetailGet); // dynamic 
 
 userRouter.get("/favList", userController.favListGet);
 
+userRouter.post("/favList", userController.favListPost);
+
 userRouter.get("/reserve", userController.reserveGet);
 
 userRouter.get("/bookings", userController.bookingsGet);
